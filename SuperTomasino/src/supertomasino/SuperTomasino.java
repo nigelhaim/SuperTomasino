@@ -2,8 +2,8 @@ package supertomasino;
 
 import java.awt.*;
 import java.awt.geom.*;
-import supertomasino.TrafficLight;
 import supertomasino.MarioTest;
+import supertomasino.SuperTomasinoChar;
 /**
  *
  * @author nigel
@@ -16,8 +16,11 @@ public class SuperTomasino extends Frame{
 
     public void paint(Graphics g){
         Graphics2D g2d = (Graphics2D) g;
-        MarioTest marioTest = new MarioTest();
-        marioTest.draw(g2d);
+        // MarioTest marioTest = new MarioTest();
+        // marioTest.draw(g2d);
+        SuperTomasinoChar stc = new SuperTomasinoChar();
+        stc.Walk(g2d);
+
 
     }
     public static void main(String[] args) {

@@ -12,3 +12,7 @@ $$
 - cd to SuperTomasino/SuperTomasino/src
 - run `javac supertomasino/*.java` to compile
 - run `java supertomasino.SuperTomasino` and the frame should show
+
+## Get coordinates and color 
+
+- https://pixspy.com
