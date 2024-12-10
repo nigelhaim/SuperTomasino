@@ -18,6 +18,14 @@ public class SuperTomasino extends Frame{
         Graphics2D g2d = (Graphics2D) g;
         // MarioTest marioTest = new MarioTest();
         // marioTest.draw(g2d);
+        AffineTransform translate = new AffineTransform();
+        translate.setToTranslation(10, 100);
+
+        // Get the original location 
+        AffineTransform original = g2d.getTransform();
+
+        // Apply the transformation
+        g2d.transform(translate);
         SuperTomasinoChar stc = new SuperTomasinoChar();
         stc.Walk(g2d);
 
