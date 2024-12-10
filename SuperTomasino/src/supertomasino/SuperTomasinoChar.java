@@ -527,6 +527,34 @@ public class SuperTomasinoChar {
         g2d.setColor(BLACK);
         g2d.fill(Pants_f3);
 
+        //Shoes 
+        GeneralPath ShoesBack_f3 = new GeneralPath();
+        ShoesBack_f3.moveTo(96, 406);
+        ShoesBack_f3.lineTo(35, 406);
+        ShoesBack_f3.lineTo(35, 465);
+        ShoesBack_f3.lineTo(65, 465);
+        ShoesBack_f3.lineTo(65, 497);
+        ShoesBack_f3.lineTo(154, 497);
+        ShoesBack_f3.lineTo(154, 472);
+        ShoesBack_f3.lineTo(124, 472);
+        ShoesBack_f3.lineTo(124, 436);
+        ShoesBack_f3.lineTo(96, 436);
+        ShoesBack_f3.closePath();
+        g2d.setColor(GRAY);
+        g2d.fill(ShoesBack_f3);
+
+        GeneralPath ShoesFront_f3 = new GeneralPath();    
+        ShoesFront_f3.moveTo(375, 343);
+        ShoesFront_f3.lineTo(410, 343);
+        ShoesFront_f3.lineTo(410, 309);
+        ShoesFront_f3.lineTo(436, 309);
+        ShoesFront_f3.lineTo(436, 436);
+        ShoesFront_f3.lineTo(375, 436);
+        ShoesFront_f3.closePath();
+        g2d.setColor(GRAY);
+        g2d.fill(ShoesFront_f3);
+
+
 
     };
     public void Walk(Graphics2D g2d){
@@ -534,13 +562,13 @@ public class SuperTomasinoChar {
         g2d.setStroke(new BasicStroke(3));
 
         for(int i = 0; i < 100000; i++){
-            // clearCanvas(g2d);
-            // FirstFrame(g2d);
-            // sustain(100);
-            // clearCanvas(g2d);
-            // SecondFrame(g2d);
-            // sustain(100); 
-            // clearCanvas(g2d);
+            clearCanvas(g2d);
+            FirstFrame(g2d);
+            sustain(100);
+            clearCanvas(g2d);
+            SecondFrame(g2d);
+            sustain(100); 
+            clearCanvas(g2d);
             ThirdFrame(g2d);
             sustain(100);
         }
