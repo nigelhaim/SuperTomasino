@@ -8,6 +8,7 @@ public class SuperTomasinoChar {
     public static final Color GRAY = new Color(124, 124, 124);
     public static final Color BLACK = new Color(0, 0, 0);
     public static final Color skin = new Color(255, 153, 0);
+    public static final Color D_WHITE = new Color(255, 236, 212);
     public static final Color transparent = new Color(0, 0, 0, 0f);
 
     private void clearCanvas(Graphics2D g2d) {
@@ -18,6 +19,7 @@ public class SuperTomasinoChar {
     public static void FirstFrame(Graphics2D g2d){
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setStroke(new BasicStroke(3));
+        
         //Head
         Rectangle2D.Double Skin1 = new Rectangle2D.Double(134, 125, 31, 65);
         g2d.setColor(skin);
@@ -41,6 +43,35 @@ public class SuperTomasinoChar {
         Nose.closePath();
         g2d.setColor(skin);
         g2d.fill(Nose);
+
+        //FrontHand
+        GeneralPath FrontHand = new GeneralPath();
+        FrontHand.moveTo(313, 284);
+        FrontHand.lineTo(353, 284);
+        FrontHand.lineTo(353, 248);
+        FrontHand.lineTo(381, 248);
+        FrontHand.lineTo(381, 284);
+        FrontHand.lineTo(412, 284);
+        FrontHand.lineTo(412, 312);
+        FrontHand.lineTo(381, 312);
+        FrontHand.lineTo(381, 344);
+        FrontHand.lineTo(313, 344);
+        FrontHand.closePath();
+        g2d.setColor(skin);
+        g2d.fill(FrontHand);
+
+        //BackHand
+        GeneralPath BackHand = new GeneralPath();
+        BackHand.moveTo(130, 285);
+        BackHand.lineTo(104, 285);
+        BackHand.lineTo(104, 314);  
+        BackHand.lineTo(71, 314);
+        BackHand.lineTo(71, 345);
+        BackHand.lineTo(130, 345);
+        BackHand.closePath();
+        g2d.setColor(skin);
+        g2d.fill(BackHand);
+
 
         //Hat
         GeneralPath Hat = new GeneralPath();
@@ -104,6 +135,37 @@ public class SuperTomasinoChar {
         g2d.setColor(BLACK);
         g2d.fill(Beard);
 
+        //Polo 
+        Rectangle2D.Double Polo = new Rectangle2D.Double(130, 248, 135, 96);
+        g2d.setColor(D_WHITE);
+        g2d.fill(Polo);
+        Rectangle2D.Double SleeveRed = new Rectangle2D.Double(265, 248, 24, 96);
+        g2d.setColor(RED); 
+        g2d.fill(SleeveRed);
+        Rectangle2D.Double SleeveGray = new Rectangle2D.Double(289, 248, 24, 96);
+        g2d.setColor(GRAY);
+        g2d.fill(SleeveGray);
+
+        //Pants
+        GeneralPath Pants = new GeneralPath();
+        Pants.moveTo(130, 315);
+        Pants.lineTo(161, 315);
+        Pants.lineTo(161, 344);
+        Pants.lineTo(161, 346);
+        Pants.lineTo(348, 346);
+        Pants.lineTo(348, 404);
+        Pants.lineTo(316, 404);
+        Pants.lineTo(316, 437);
+        Pants.lineTo(228, 437);
+        Pants.lineTo(228, 404);
+        Pants.lineTo(196, 404);
+        Pants.lineTo(196, 437);
+        Pants.lineTo(104, 437);
+        Pants.lineTo(104, 377);
+        Pants.lineTo(130, 377);
+        Pants.closePath();
+        g2d.setColor(BLACK);
+        g2d.fill(Pants);
 
     };
     public static void SecondFrame(Graphics2D g2d){
