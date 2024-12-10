@@ -373,6 +373,92 @@ public class SuperTomasinoChar {
     public static void ThirdFrame(Graphics2D g2d){
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setStroke(new BasicStroke(3));
+        //Head
+        Rectangle2D.Double Skin1_f3 = new Rectangle2D.Double(159, 63, 186, 155);
+        g2d.setColor(skin);
+        g2d.fill(Skin1_f3);
+        Rectangle2D.Double Skin2_f3 = new Rectangle2D.Double(128, 96, 35, 65);
+        g2d.setColor(skin);
+        g2d.fill(Skin2_f3);
+
+        //Nose 
+        GeneralPath Nose_f3 = new GeneralPath();
+        Nose_f3.moveTo(345, 63);
+        Nose_f3.lineTo(345, 96);
+        Nose_f3.lineTo(406, 96);
+        Nose_f3.lineTo(406, 127);
+        Nose_f3.lineTo(437, 127);
+        Nose_f3.lineTo(437, 156);
+        Nose_f3.lineTo(405, 156);
+        Nose_f3.lineTo(405, 186);
+        Nose_f3.lineTo(374, 186);
+        Nose_f3.lineTo(374, 218);
+        Nose_f3.lineTo(345, 218);
+        Nose_f3.closePath();
+        g2d.setColor(skin);
+        g2d.fill(Nose_f3);
+
+        //Hat
+        GeneralPath Hat_f3 = new GeneralPath();
+        Hat_f3.moveTo(159, 3);
+        Hat_f3.lineTo(311, 3);
+        Hat_f3.lineTo(311, 34);
+        Hat_f3.lineTo(405, 34);
+        Hat_f3.lineTo(405, 63);
+        Hat_f3.lineTo(128, 63);
+        Hat_f3.lineTo(128, 34);
+        Hat_f3.lineTo(159, 34);
+        Hat_f3.closePath();
+        g2d.setColor(RED);
+        g2d.fill(Hat_f3);
+
+        //SideBurn
+        GeneralPath SideBurn_f3 = new GeneralPath();
+        SideBurn_f3.moveTo(128, 63);
+        SideBurn_f3.lineTo(128, 96);
+        SideBurn_f3.lineTo(159, 96);
+        SideBurn_f3.lineTo(159, 158);
+        SideBurn_f3.lineTo(219, 158);
+        SideBurn_f3.lineTo(219, 128);
+        SideBurn_f3.lineTo(188, 128);
+        SideBurn_f3.lineTo(188, 96);
+        SideBurn_f3.lineTo(219, 96);
+        SideBurn_f3.lineTo(219, 63);
+        SideBurn_f3.closePath();
+        g2d.setColor(BLACK);
+        g2d.fill(SideBurn_f3);
+
+
+        //BackBurn
+        GeneralPath BackBurn_f3 = new GeneralPath();
+        BackBurn_f3.moveTo(128, 96);
+        BackBurn_f3.lineTo(97, 97);
+        BackBurn_f3.lineTo(97, 187);    
+        BackBurn_f3.lineTo(159, 187);
+        BackBurn_f3.lineTo(159, 158);
+        BackBurn_f3.lineTo(128, 158);
+        BackBurn_f3.closePath();
+        g2d.setColor(BLACK);
+        g2d.fill(BackBurn_f3);
+
+        //Eye
+        Rectangle2D.Double Eye1_f3 = new Rectangle2D.Double(281, 63, 29, 61);
+        g2d.setColor(BLACK);
+        g2d.fill(Eye1_f3);
+
+        //Beard
+        GeneralPath Beard_f3 = new GeneralPath();
+        Beard_f3.moveTo(311, 127);
+        Beard_f3.lineTo(345, 127);
+        Beard_f3.lineTo(345, 156);
+        Beard_f3.lineTo(406, 156);
+        Beard_f3.lineTo(406, 186);
+        Beard_f3.lineTo(281, 186);
+        Beard_f3.lineTo(281, 156);
+        Beard_f3.lineTo(311, 156);
+        Beard_f3.closePath();
+        g2d.setColor(BLACK);
+        g2d.fill(Beard_f3);
 
     };
     public void Walk(Graphics2D g2d){
