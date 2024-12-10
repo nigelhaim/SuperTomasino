@@ -398,6 +398,25 @@ public class SuperTomasinoChar {
         g2d.setColor(skin);
         g2d.fill(Nose_f3);
 
+        //BackHand  
+        GeneralPath BackHand_f3 = new GeneralPath();
+        BackHand_f3.moveTo(68, 250);
+        BackHand_f3.lineTo(5, 253);
+        BackHand_f3.lineTo(5, 340);
+        BackHand_f3.lineTo(61, 340);
+        BackHand_f3.lineTo(61, 312);
+        BackHand_f3.lineTo(96, 312);
+        BackHand_f3.lineTo(96, 281);
+        BackHand_f3.closePath();
+        g2d.setColor(skin);
+        g2d.fill(BackHand_f3);
+
+        //FrontHand 
+        Rectangle2D.Double FrontHand_f3 = new Rectangle2D.Double(344, 251, 121, 58);
+        g2d.setColor(skin);
+        g2d.fill(FrontHand_f3);
+
+
         //Hat
         GeneralPath Hat_f3 = new GeneralPath();
         Hat_f3.moveTo(159, 3);
@@ -460,6 +479,55 @@ public class SuperTomasinoChar {
         g2d.setColor(BLACK);
         g2d.fill(Beard_f3);
 
+        //Polo
+        GeneralPath Polo_f3 = new GeneralPath();
+        Polo_f3.moveTo(124, 218);
+        Polo_f3.lineTo(124, 343);
+        Polo_f3.lineTo(344, 342);
+        Polo_f3.lineTo(344, 309);
+        Polo_f3.lineTo(284, 309);
+        Polo_f3.lineTo(284, 251);
+        Polo_f3.lineTo(313, 251);
+        Polo_f3.lineTo(313, 218);
+        Polo_f3.closePath();
+        g2d.setColor(D_WHITE);
+        g2d.fill(Polo_f3);
+
+        Rectangle2D.Double SleeveRed_Right_f3 = new Rectangle2D.Double(284, 251, 29, 58);
+        g2d.setColor(RED);
+        g2d.fill(SleeveRed_Right_f3);
+        Rectangle2D.Double SleeveGray_Right_f3 = new Rectangle2D.Double(313, 251, 31, 58);
+        g2d.setColor(GRAY);
+        g2d.fill(SleeveGray_Right_f3);
+
+        Rectangle2D.Double SleeveRed_Left_f3 = new Rectangle2D.Double(96, 218, 28, 62);
+        g2d.setColor(RED);
+        g2d.fill(SleeveRed_Left_f3);
+        Rectangle2D.Double SleeveGray_Left_f3 = new Rectangle2D.Double(68, 218, 28, 62);
+        g2d.setColor(GRAY);
+        g2d.fill(SleeveGray_Left_f3);
+
+        //Pants
+        GeneralPath Pants_f3 = new GeneralPath();
+        Pants_f3.moveTo(124, 343);
+        Pants_f3.lineTo(375, 343);
+        Pants_f3.lineTo(375, 408);
+        Pants_f3.lineTo(375, 436);
+        Pants_f3.lineTo(284, 436);
+        Pants_f3.lineTo(284, 404);
+        Pants_f3.lineTo(187, 404);
+        Pants_f3.lineTo(187, 436);
+        Pants_f3.lineTo(96, 436);
+        Pants_f3.lineTo(96, 406);
+        Pants_f3.lineTo(65, 406);
+        Pants_f3.lineTo(65, 378); 
+        Pants_f3.lineTo(96, 378);
+        Pants_f3.lineTo(96, 343);
+        Pants_f3.closePath();
+        g2d.setColor(BLACK);
+        g2d.fill(Pants_f3);
+
+
     };
     public void Walk(Graphics2D g2d){
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -474,7 +542,7 @@ public class SuperTomasinoChar {
             // sustain(100); 
             // clearCanvas(g2d);
             ThirdFrame(g2d);
-            sustain(500);
+            sustain(100);
         }
 
     }
