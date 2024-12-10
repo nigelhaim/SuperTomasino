@@ -557,11 +557,13 @@ public class SuperTomasinoChar {
 
 
     };
-    public void Walk(Graphics2D g2d){
+
+
+    public void Walk(Graphics2D g2d, int time){
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setStroke(new BasicStroke(3));
 
-        for(int i = 0; i < 100000; i++){
+        for(int i = 0; i < time; i++){
             clearCanvas(g2d);
             FirstFrame(g2d);
             sustain(100);
@@ -572,6 +574,214 @@ public class SuperTomasinoChar {
             ThirdFrame(g2d);
             sustain(100);
         }
+
+    }
+
+    public void Jump(Graphics2D g2d){
+        clearCanvas(g2d);
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g2d.setStroke(new BasicStroke(3));
+
+        //Head
+        Rectangle2D.Double Skin1 = new Rectangle2D.Double(176, 84, 172, 144);
+        g2d.setColor(skin);
+        g2d.fill(Skin1);
+
+        Rectangle2D.Double Skin2 = new Rectangle2D.Double(147, 111, 29, 73);
+        g2d.setColor(skin);
+        g2d.fill(Skin2);
+
+        //Nose
+        GeneralPath Nose = new GeneralPath();
+        Nose.moveTo(348, 114);
+        Nose.lineTo(376, 114);
+        Nose.lineTo(376, 142);
+        Nose.lineTo(433, 142);
+        Nose.lineTo(433, 170);
+        Nose.lineTo(376, 170);
+        Nose.lineTo(376, 228);
+        Nose.lineTo(348, 228);
+        Nose.closePath();
+        g2d.setColor(skin);
+        g2d.fill(Nose);
+
+        //FrontHand
+        Rectangle2D.Double FrontHand = new Rectangle2D.Double(376, 5, 87, 137);
+        g2d.setColor(skin);
+        g2d.fill(FrontHand);
+
+        //BackHand
+        GeneralPath BackHand = new GeneralPath();
+        BackHand.moveTo(117, 229);
+        BackHand.lineTo(61, 229);
+        BackHand.lineTo(61, 258);
+        BackHand.lineTo(32, 258);
+        BackHand.lineTo(32, 287);
+        BackHand.lineTo(3, 287);
+        BackHand.lineTo(3, 342);
+        BackHand.lineTo(31, 342);
+        BackHand.lineTo(31, 374);
+        BackHand.lineTo(57, 374);
+        BackHand.lineTo(57, 342);
+        BackHand.lineTo(87, 342);
+        BackHand.lineTo(87, 314);
+        BackHand.lineTo(117, 314);
+        BackHand.closePath();
+        g2d.setColor(skin);
+        g2d.fill(BackHand);
+
+        //Hat 
+        GeneralPath Hat = new GeneralPath();
+        Hat.moveTo(176, 27);
+        Hat.lineTo(317, 27);
+        Hat.lineTo(317, 58);
+        Hat.lineTo(404, 58);
+        Hat.lineTo(404, 85);
+        Hat.lineTo(147, 85);
+        Hat.lineTo(147, 58);
+        Hat.lineTo(176, 58);
+        Hat.closePath();
+        g2d.setColor(RED);
+        g2d.fill(Hat);
+
+        //SideBurn
+        GeneralPath SideBurn = new GeneralPath();
+        SideBurn.moveTo(147, 85);
+        SideBurn.lineTo(232, 85);
+        SideBurn.lineTo(232, 111);
+        SideBurn.lineTo(202, 111);
+        SideBurn.lineTo(202, 142);
+        SideBurn.lineTo(232, 142);
+        SideBurn.lineTo(232, 170);
+        SideBurn.lineTo(176, 170);
+        SideBurn.lineTo(176, 170);
+        SideBurn.lineTo(176, 111);
+        SideBurn.lineTo(147, 111);
+        SideBurn.closePath();
+        g2d.setColor(BLACK);
+        g2d.fill(SideBurn);
+
+        //BackBurn
+        GeneralPath BackBurn = new GeneralPath();
+        BackBurn.moveTo(147, 111);
+        BackBurn.lineTo(118, 111);
+        BackBurn.lineTo(118, 197);
+        BackBurn.lineTo(176, 197);
+        BackBurn.lineTo(176, 171);
+        BackBurn.lineTo(147, 171);
+        BackBurn.closePath();
+        g2d.setColor(BLACK);
+        g2d.fill(BackBurn);
+
+        //Eye 
+        Rectangle2D.Double Eye1 = new Rectangle2D.Double(291, 85, 27, 56);
+        g2d.setColor(BLACK);
+        g2d.fill(Eye1);
+
+        //Beard
+        GeneralPath Beard = new GeneralPath();
+        Beard.moveTo(317, 142);
+        Beard.lineTo(348, 142);
+        Beard.lineTo(348, 170);
+        Beard.lineTo(433, 170);
+        Beard.lineTo(433, 198);
+        Beard.lineTo(404, 198);
+        Beard.lineTo(404, 227);
+        Beard.lineTo(376, 227);
+        Beard.lineTo(376, 200);
+        Beard.lineTo(291, 200);
+        Beard.lineTo(291, 170);
+        Beard.lineTo(317, 170);
+        Beard.closePath();
+        g2d.setColor(BLACK);
+        g2d.fill(Beard);
+
+        //Polo
+        GeneralPath Polo = new GeneralPath();
+        Polo.moveTo(176, 228);
+        Polo.lineTo(176, 315);
+        Polo.lineTo(117, 315);
+        Polo.lineTo(117, 339);
+        Polo.lineTo(406, 339);
+        Polo.lineTo(406, 315);
+        Polo.lineTo(379, 315);
+        Polo.lineTo(379, 228);
+        Polo.closePath();
+        g2d.setColor(D_WHITE);
+        g2d.fill(Polo);
+
+        Rectangle2D.Double PocketRed = new Rectangle2D.Double(289, 256, 90, 15);
+        g2d.setColor(RED);
+        g2d.fill(PocketRed);
+        Rectangle2D.Double PocketGray = new Rectangle2D.Double(289, 271, 90, 15);
+        g2d.setColor(GRAY);
+        g2d.fill(PocketGray);
+
+
+        Rectangle2D.Double SleeveRed_Left = new Rectangle2D.Double(147, 229, 29, 85);
+        g2d.setColor(RED);
+        g2d.fill(SleeveRed_Left);
+        Rectangle2D.Double SleeveGray_Left = new Rectangle2D.Double(117, 229, 30, 85);
+        g2d.setColor(GRAY);
+        g2d.fill(SleeveGray_Left);
+
+        Rectangle2D.Double SleeveRed_Right = new Rectangle2D.Double(433, 142, 30, 28);
+        g2d.setColor(RED);
+        g2d.fill(SleeveRed_Right);
+        
+        Rectangle2D.Double SleeveGray_Right = new Rectangle2D.Double(376, 114, 87, 28);
+        g2d.setColor(GRAY);
+        g2d.fill(SleeveGray_Right);
+
+        //Pants
+        GeneralPath Pants = new GeneralPath();
+        Pants.moveTo(117, 339);
+        Pants.lineTo(406, 339);
+        Pants.lineTo(406, 402);
+        Pants.lineTo(319, 402);
+        Pants.lineTo(319, 431);
+        Pants.lineTo(232, 431);
+        Pants.lineTo(232, 459);
+        Pants.lineTo(117, 459);
+        Pants.lineTo(117, 402);
+        Pants.lineTo(143, 402);
+        Pants.lineTo(143, 431);
+        Pants.lineTo(143, 374);
+        Pants.lineTo(117, 374);
+        Pants.closePath();
+        g2d.setColor(BLACK);
+        g2d.fill(Pants);
+        
+        //Shoes
+        GeneralPath ShoesBack = new GeneralPath();
+        ShoesBack.moveTo(117, 339);
+        ShoesBack.lineTo(117, 374);
+        ShoesBack.lineTo(143, 374);
+        ShoesBack.lineTo(143, 402);
+        ShoesBack.lineTo(117, 402);
+        ShoesBack.lineTo(117, 431);
+        ShoesBack.lineTo(58, 431);
+        ShoesBack.lineTo(58, 459);
+        ShoesBack.lineTo(32, 459);
+        ShoesBack.lineTo(32, 402);
+        ShoesBack.lineTo(58, 402);
+        ShoesBack.lineTo(58, 374);
+        ShoesBack.lineTo(89, 374);
+        ShoesBack.lineTo(89, 340);
+        ShoesBack.closePath();
+        g2d.setColor(GRAY);
+        g2d.fill(ShoesBack);
+
+        GeneralPath ShoesFront = new GeneralPath();
+        ShoesFront.moveTo(406, 315);
+        ShoesFront.lineTo(406, 402);
+        ShoesFront.lineTo(463, 402);
+        ShoesFront.lineTo(463, 259);
+        ShoesFront.lineTo(435, 259);
+        ShoesFront.lineTo(435, 315);
+        ShoesFront.closePath();
+        g2d.setColor(GRAY);
+        g2d.fill(ShoesFront);
 
     }
     public static void sustain(long t){

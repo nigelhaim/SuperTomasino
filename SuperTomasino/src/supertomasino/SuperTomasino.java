@@ -2,6 +2,7 @@ package supertomasino;
 
 import java.awt.*;
 import java.awt.geom.*;
+import java.util.Date;
 import supertomasino.MarioTest;
 import supertomasino.SuperTomasinoChar;
 /**
@@ -26,10 +27,18 @@ public class SuperTomasino extends Frame{
 
         // Apply the transformation
         g2d.transform(translate);
-        SuperTomasinoChar stc = new SuperTomasinoChar();
-        stc.Walk(g2d);
 
-
+        for (int i = 0; i < 10; i++) {
+            SuperTomasinoChar stc = new SuperTomasinoChar();
+            stc.Walk(g2d, 5);
+            stc.Jump(g2d);
+            sustain(1000);
+        }
+    }
+    public static void sustain(long t){
+        long finish = (new Date()).getTime() + t;
+        while((new Date()).getTime() < finish){
+        }
     }
     public static void main(String[] args) {
         // TODO code application logic here
