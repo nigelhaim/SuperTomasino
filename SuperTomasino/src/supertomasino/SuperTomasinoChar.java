@@ -167,6 +167,35 @@ public class SuperTomasinoChar {
         g2d.setColor(BLACK);
         g2d.fill(Pants);
 
+        //Shoes
+        GeneralPath ShoesBack = new GeneralPath();
+        ShoesBack.moveTo(130, 345); 
+        ShoesBack.lineTo(130, 377);
+        ShoesBack.lineTo(104, 377);
+        ShoesBack.lineTo(104, 437);
+        ShoesBack.lineTo(67, 437);  
+        ShoesBack.lineTo(67, 467);
+        ShoesBack.lineTo(41, 467);
+        ShoesBack.lineTo(41, 410);
+        ShoesBack.lineTo(71, 410);
+        ShoesBack.lineTo(71, 345);
+        ShoesBack.closePath();
+        g2d.setColor(GRAY);
+        g2d.fill(ShoesBack);
+
+        GeneralPath ShoesFront = new GeneralPath();
+        ShoesFront.moveTo(228, 437);
+        ShoesFront.lineTo(286, 437);
+        ShoesFront.lineTo(286, 472);
+        ShoesFront.lineTo(316, 472);
+        ShoesFront.lineTo(316, 438);
+        ShoesFront.lineTo(316, 497);
+        ShoesFront.lineTo(198, 497);    
+        ShoesFront.lineTo(198, 437);
+        ShoesFront.closePath(); 
+        g2d.setColor(GRAY);
+        g2d.fill(ShoesFront);
+
     };
     public static void SecondFrame(Graphics2D g2d){
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
