@@ -30,8 +30,9 @@ public class SuperTomasino extends Frame{
 
         for (int i = 0; i < 10; i++) {
             SuperTomasinoChar stc = new SuperTomasinoChar();
-            stc.Walk(g2d, 5);
-            stc.Jump(g2d);
+            // stc.Walk(g2d, 5);
+            stc.Wave(g2d);
+            // stc.Jump(g2d);
             sustain(1000);
         }
     }
