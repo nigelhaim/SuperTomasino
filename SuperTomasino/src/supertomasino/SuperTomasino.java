@@ -22,7 +22,7 @@ public class SuperTomasino extends Frame{
     private void clearCanvas(Graphics2D g2d) {
         Color background = new Color(0,138,197);
         g2d.setPaint(background);
-        g2d.fill(new Rectangle(0, 0, 1500, 1500));
+        g2d.fill(new Rectangle(-100, -100, 10000, 10000));
     }
     public void paint(Graphics g){
         Graphics2D g2d = (Graphics2D) g;
@@ -32,37 +32,71 @@ public class SuperTomasino extends Frame{
         AffineTransform original = g2d.getTransform();
         for (int i = 0; i < 15; i++) {
             clearCanvas(g2d);
+            SuperTomasinoChar stc = new SuperTomasinoChar();
+            Sun sun = new Sun();
 
             AffineTransform translate_mario = new AffineTransform();
             AffineTransform scale_mario = new AffineTransform();
-            translate_mario.setToTranslation(10, 640);
-            scale_mario.setToScale(0.5, 0.5);
+            AffineTransform moveTo = new AffineTransform();
+            AffineTransform translate_sun = new AffineTransform();   
+            translate_mario.setToTranslation(10, 750);
+            scale_mario.setToScale(0.3, 0.3);
+            translate_sun.setToTranslation(600, 425);
+
+            BufferedImage floor = null;
+            try {
+                floor = ImageIO.read(getClass().getResource("images/floor.png"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }  
 
 
-
+            g2d.setTransform(translate_sun);
+            sun.Roam(g2d);
             g2d.transform(translate_mario);
-            for(int j = 0; j < 50; j++){
+            for(int j = 0; j < 15; j++){
                 clearCanvas(g2d);
                 g2d.setTransform(original);
-                // System.out.println(getClass().getResource("images/floor.png"));
-                BufferedImage floor = null;
-                try {
-                    floor = ImageIO.read(getClass().getResource("images/floor.png"));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }  
-                g2d.drawImage(floor, 0, 900, 1500,200, this);
+                g2d.drawImage(floor, 0, 900, 1900,200, this);
                 g2d.transform(translate_mario);
                 g2d.transform(scale_mario);   
-                AffineTransform translate = new AffineTransform();
-                g2d.transform(translate);
-                AffineTransform moveTo = new AffineTransform();
-                moveTo.setToTranslation(10+(j*50), 0);
+                moveTo.setToTranslation(10+(j*75), 0);
                 g2d.transform(moveTo);
-                SuperTomasinoChar stc = new SuperTomasinoChar();
                 stc.Walk(g2d, 1);
+                sustain(1);
+                System.out.println("Walk:" + j);
+            }
+            AffineTransform jumpup = new AffineTransform();
+            for(int k = 0; k<10; k++){
+                clearCanvas(g2d);
+                g2d.setTransform(original);
+                g2d.drawImage(floor, 0, 900, 1900,200, this);
+                g2d.transform(translate_mario);
+                g2d.transform(scale_mario);
+                moveTo.setToTranslation(1135+(k*60), (-k*75));
+                g2d.transform(moveTo);
                 stc.Jump(g2d);
-                sustain(10);
+                sustain(50);
+                System.out.println("Jump:" + k);
+            }
+            stc.Jump(g2d);
+            g2d.setTransform(original);
+
+            AffineTransform jumpdown = new AffineTransform();
+            for(int k = 0; k<10; k++){
+                clearCanvas(g2d);
+                g2d.setTransform(original);
+                g2d.drawImage(floor, 0, 900, 1900,200, this);
+                g2d.setTransform(translate_sun);
+                sun.obtained(g2d, k);
+                g2d.setTransform(original);
+                g2d.transform(translate_mario);
+                g2d.transform(scale_mario);
+                moveTo.setToTranslation(1735+(k*60), -750+(k*75));
+                g2d.transform(moveTo);
+                stc.Jump(g2d);
+                sustain(50);
+                System.out.println("Jump:" + k);
             }
             g2d.setTransform(original);
         }
@@ -76,7 +110,7 @@ public class SuperTomasino extends Frame{
         // TODO code application logic here
         Color background = new Color(0,138,197);
         SuperTomasino st = new SuperTomasino();
-        st.setSize(1500,1500);
+        st.setSize(1900,1500);
         st.setBackground(background);
         st.setTitle("Super Tomasino | Nigel Haim N. Sebastian");
         st.setVisible(true);
