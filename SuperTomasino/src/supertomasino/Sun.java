@@ -45,7 +45,12 @@ public class Sun{
         g2d.transform(squish);
         g2d.drawImage(sun, 0, 0, 100, 100, null);
         sustain(1);  
+    }
 
+    public void remove(Graphics2D g2d){
+        AffineTransform original = g2d.getTransform();
+        g2d.setTransform(original);
+        clearCanvas(g2d);
     }
     public static void sustain(long t){
         long finish = (new Date()).getTime() + t;

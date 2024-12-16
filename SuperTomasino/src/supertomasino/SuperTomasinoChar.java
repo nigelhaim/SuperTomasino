@@ -12,9 +12,11 @@ public class SuperTomasinoChar {
     public static final Color transparent = new Color(0, 0, 0, 0f);
 
     private void clearCanvas(Graphics2D g2d) {
+        
         Color background = new Color(0, 138, 197);
-        g2d.setColor(background); // Or whatever your background color is
-        g2d.fillRect(0, 0, 469, 503); // Replace 800 and 600 with your actual canvas dimensions
+    
+        g2d.setColor(background);
+        g2d.fillRect(0, 0, 469, 503); 
     }
 
     public static void FirstFrame(Graphics2D g2d){
