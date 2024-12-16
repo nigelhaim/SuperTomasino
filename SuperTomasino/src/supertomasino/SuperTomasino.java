@@ -37,6 +37,14 @@ public class SuperTomasino extends Frame{
         g2d.drawImage(main_bldg, 1175, 160, 1500, 750, this);
         g2d.drawImage(floor, 0, 900, 2000,200, this);
     }
+
+    public void ShowTitleScreen(Graphics2D g2d, BufferedImage TitleScreen){
+        g2d.drawImage(TitleScreen, 0,35, 1925,1000, this);
+        g2d.setColor(Color.WHITE);
+        g2d.drawString("PRESS ANY KEY TO START",265, 800);
+        sustain(3000);
+        clearCanvas(g2d);
+    }
     public void paint(Graphics g){
         Graphics2D g2d = (Graphics2D) g;
         g2d.setStroke(new BasicStroke(3));
@@ -64,6 +72,13 @@ public class SuperTomasino extends Frame{
             e.printStackTrace();
         }
 
+        BufferedImage TitleScreen = null;
+        try{
+            TitleScreen = ImageIO.read(getClass().getResource("images/TitleScreen.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
         AffineTransform original = g2d.getTransform();
         for (int i = 0; i < 15; i++) {
@@ -75,11 +90,15 @@ public class SuperTomasino extends Frame{
             AffineTransform scale_mario = new AffineTransform();
             AffineTransform moveTo = new AffineTransform();
             AffineTransform translate_sun = new AffineTransform();   
+            AffineTransform scale_sun = new AffineTransform();
+            scale_sun.setToScale(2, 2);
             translate_mario.setToTranslation(10, 750);
             scale_mario.setToScale(0.3, 0.3);
-            translate_sun.setToTranslation(600, 425);
+            translate_sun.setToTranslation(600, 375);
 
 
+            g2d.setTransform(original);
+            ShowTitleScreen(g2d, TitleScreen);
 
             g2d.setTransform(translate_sun);
             sun.Roam(g2d);
